@@ -49,39 +49,29 @@ void Rectangle::update()
 
 void Rectangle::setObjective(Vector2f objective)
 {
-    Event event;
-    if (event.type == Event::MouseButtonPressed)
-    {
-        if (event.mouseButton.button == Mouse::Left)
-        {
-            int xo = event.mouseButton.x;
-            int yo = event.mouseButton.y;
-            Vector2i position(xo, yo);
-        }
-    }
     this->shape.getPosition().x;
     this->shape.getPosition().y;
     float h;
-    float hx =
+    float hx;
+    float hy;
+}
+/**(5pts)
+    Asigna objetivo a la propiedad objective.
+    Calcula la dirección hacia el objetivo y la velocidad necesaria para llegar al objetivo:
+    - Calcula la dirección hacia el objetivo.
+        - La dirección es la diferencia entre el objetivo y la posición del cuadrado.
 
-        int x =
-    /**(5pts)
-        Asigna objetivo a la propiedad objective.
-        Calcula la dirección hacia el objetivo y la velocidad necesaria para llegar al objetivo:
-        - Calcula la dirección hacia el objetivo.
-            - La dirección es la diferencia entre el objetivo y la posición del cuadrado.
+    - Calcula la magnitud de la dirección.
+        - la magnitud es la distancia entre el cuadrado y el objetivo.
+        - usa teorema de pitágoras para calcularla.
 
-        - Calcula la magnitud de la dirección.
-            - la magnitud es la distancia entre el cuadrado y el objetivo.
-            - usa teorema de pitágoras para calcularla.
+    - Calcula la velocidad necesaria para llegar al objetivo.
+      - La velocidad es la dirección hacia el objetivo dividida por la magnitud de la dirección, multiplicada por un factor para cada eje.
+*/
 
-        - Calcula la velocidad necesaria para llegar al objetivo.
-          - La velocidad es la dirección hacia el objetivo dividida por la magnitud de la dirección, multiplicada por un factor para cada eje.
-    */
-
-    /**Reto de valientes (0.5 décimas extra)
-        Haz que el centro del cuadrado se posicione donde se dio click en lugar de que la esquina superior izquierda se posicione donde se dio click.
-    */
+/**Reto de valientes (0.5 décimas extra)
+    Haz que el centro del cuadrado se posicione donde se dio click en lugar de que la esquina superior izquierda se posicione donde se dio click.
+*/
 }
 
 void Rectangle::drawTo(RenderWindow &window)
