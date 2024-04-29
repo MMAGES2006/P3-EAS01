@@ -5,8 +5,12 @@ using namespace std;
 
 Rectangle::Rectangle(Vector2f size)
 {
+    this->shape = RectangleShape(size);
+    this->speed = Vector2f(0.f, 0.f);
+    this->objective = Vector2f(0.f, 0.f);
+    this->shape.setFillColor(Color::Blue);
     /**  (4pts)
-        Inicializa las variables: 
+        Inicializa las variables:
         - shape: un rectángulo de tamaño size.
         - speed: un Vector2f con valores (0, 0).
         - objective: un Vector2f con valores (0, 0).
@@ -16,6 +20,11 @@ Rectangle::Rectangle(Vector2f size)
 
 Rectangle::Rectangle(Vector2f size, Vector2i position)
 {
+    this->shape = RectangleShape(size);
+    this->speed = Vector2f(0.f, 0.f);
+    this->objective = Vector2f(0.f, 0.f);
+    this->shape.setFillColor(Color::Blue);
+    this->
     /** (5pts)
         Inicializa las variables:
         - shape: un rectángulo de tamaño size.
@@ -28,6 +37,8 @@ Rectangle::Rectangle(Vector2f size, Vector2i position)
 
 void Rectangle::update()
 {
+    this->shape.move(speed);
+
     /**(6pts)
         Mueve el cuadrado.
         Si el cuadrado está a menos de 5 pixeles del objetivo, detén el cuadrado y píntalo de verde.
@@ -38,14 +49,32 @@ void Rectangle::update()
 
 void Rectangle::setObjective(Vector2f objective)
 {
+    Event event;
+    if (event.type == Event::MouseButtonPressed)
+    {
+        if (event.mouseButton.button == Mouse::Left)
+        {
+            int xo = event.mouseButton.x;
+            int yo = event.mouseButton.y;
+            Vector2i position(xo, yo);
+        }
+    }
+    this->shape.getPosition().x;
+    this->shape.getPosition().y;
+    float h;
+    float hx =
+
+        int x =
     /**(5pts)
         Asigna objetivo a la propiedad objective.
         Calcula la dirección hacia el objetivo y la velocidad necesaria para llegar al objetivo:
         - Calcula la dirección hacia el objetivo.
             - La dirección es la diferencia entre el objetivo y la posición del cuadrado.
+
         - Calcula la magnitud de la dirección.
             - la magnitud es la distancia entre el cuadrado y el objetivo.
             - usa teorema de pitágoras para calcularla.
+
         - Calcula la velocidad necesaria para llegar al objetivo.
           - La velocidad es la dirección hacia el objetivo dividida por la magnitud de la dirección, multiplicada por un factor para cada eje.
     */
